@@ -21,9 +21,9 @@
     };
   </script>
   <style>
-    /* subtle card shadow & hairline border */
     .card { border: 1px solid rgba(0,0,0,.06); box-shadow: 0 2px 10px rgba(0,0,0,.04); }
     .hairline { border-top: 1px solid rgba(0,0,0,.06); }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="text-zinc-900 bg-white">
@@ -45,11 +45,10 @@
         <a href="#activities" class="hover:text-zinc-600">Activities</a>
         <a href="#contact" class="hover:text-zinc-600">Contact</a>
         <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">GitHub</a>
-        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-1.5 rounded-full bg-brand text-white hover:opacity-90">Instagram</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-1.5 rounded-full bg-accent text-white hover:opacity-90">Instagram</a>
       </nav>
 
       <button id="navBtn" class="md:hidden p-2" aria-label="menu">
-        <!-- simple burger -->
         <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -61,7 +60,7 @@
         <a href="#activities" onclick="toggleNav()">Activities</a>
         <a href="#contact" onclick="toggleNav()">Contact</a>
         <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-2 rounded-xl border w-max">GitHub</a>
-        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-2 rounded-xl bg-brand text-white w-max">Instagram</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-2 rounded-xl bg-accent text-white w-max">Instagram</a>
       </div>
     </div>
   </header>
@@ -73,10 +72,10 @@
       <div>
         <img src="assets/logo.png" alt="TEAM APOLLO" class="h-24 w-24 md:h-28 md:w-28 rounded-full border mb-6 object-contain">
         <h1 class="text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
-          Full‑stack <span class="underline decoration-zinc-300">Autonomous</span> Racing Team
+          풀스택 <span class="underline decoration-zinc-300">자율주행</span> 레이싱 팀
         </h1>
         <p class="mt-5 text-lg text-zinc-600">
-          자작차 & 자율주행 — 전자, 인지·판단, 모델링, 제작까지 풀스택으로 탐구합니다.
+          전자 · 인지·판단 · 모델링 · 제작까지 하나의 팀으로 완성합니다.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="#sponsor" class="px-5 py-3 rounded-full bg-brand text-white hover:opacity-90">후원하기</a>
@@ -86,8 +85,16 @@
       </div>
       <div>
         <div class="relative card rounded-3xl bg-white p-6">
-          <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=1400&auto=format&fit=crop"
-               alt="vehicle" class="aspect-video w-full object-cover rounded-2xl">
+          <!-- Replaced hero image with user's car photo (responsive) -->
+          <picture>
+            <source srcset="assets/hero_1600.webp" type="image/webp">
+            <source
+              srcset="assets/hero_800.jpg 800w, assets/hero_1200.jpg 1200w, assets/hero_1600.jpg 1600w, assets/hero_2000.jpg 2000w"
+              type="image/jpeg">
+            <img src="assets/hero_1200.jpg"
+                alt="APOLLO prototype on track"
+                class="aspect-video w-full object-cover rounded-2xl">
+          </picture>
           <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
             <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">자작차</span>
             <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">자율주행</span>
@@ -140,7 +147,6 @@
       <h2 class="text-3xl md:text-4xl font-semibold mb-2">파트 소개</h2>
       <p class="text-zinc-600">전자 · 인지판단 · 모델링 · 제작</p>
       <div class="mt-8 grid md:grid-cols-2 gap-6">
-        
         <div class="card rounded-2xl bg-white p-6">
           <h3 class="font-medium">전자(Electronics)</h3>
           <p class="text-sm text-zinc-700 mt-2">전장 설계, 배터리 매니지먼트, CAN/UART, 센서 인터페이스.</p>
@@ -171,7 +177,6 @@
       <h2 class="text-3xl md:text-4xl font-semibold mb-2">SINCE</h2>
       <p class="text-zinc-600">연혁과 주요 이정표</p>
       <div class="mt-8 grid gap-4">
-        
         <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
           <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2023</div>
           <p class="text-zinc-700">APOLLO 창립, 첫 자작차 플랫폼 설계</p>
@@ -188,32 +193,62 @@
     </div>
   </section>
 
-  <!-- Activities -->
+  <!-- Activities (updated as requested) -->
   <section id="activities" class="py-16 hairline">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-semibold mb-2">활동 내용</h2>
-      <p class="text-zinc-600">세미나 · 트랙 테스트 · 대회 참가 · 오픈소스</p>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        
+      <p class="text-zinc-600">세미나 · 모델링 & 제작 · 전자 장비 · 대회 참가</p>
+
+      <div class="mt-8 grid md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- 1) 세미나 & 스터디 -->
         <div class="card rounded-2xl bg-white overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <picture>
+            <source srcset="assets/seminar_1200.webp" type="image/webp">
+            <source srcset="assets/seminar_400.jpg 400w, assets/seminar_800.jpg 800w, assets/seminar_1200.jpg 1200w, assets/seminar_1600.jpg 1600w" type="image/jpeg">
+            <img src="assets/seminar_1200.jpg" alt="APOLLO 세미나 & 스터디" class="aspect-video w-full object-cover" />
+          </picture>
           <div class="p-6">
             <h3 class="font-medium">세미나 & 스터디</h3>
-            <p class="text-sm text-zinc-600 mt-1">ROS/자율주행 알고리즘 스터디와 논문 리딩</p>
+            <p class="text-sm text-zinc-600 mt-1">ROS/자율주행 알고리즘 스터디, 논문 리딩과 코드 리뷰.</p>
           </div>
         </div>
+
+        <!-- 2) 모델링 & 제작 -->
         <div class="card rounded-2xl bg-white overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <picture>
+            <source srcset="assets/model_fab_1200.webp" type="image/webp">
+            <source srcset="assets/model_fab_800.jpg 800w, assets/model_fab_1200.jpg 1200w, assets/model_fab_1600.jpg 1600w" type="image/jpeg">
+            <img src="assets/model_fab_1200.jpg" alt="프레임 용접 및 제작" class="aspect-video w-full object-cover" />
+          </picture>
           <div class="p-6">
-            <h3 class="font-medium">트랙 테스트</h3>
-            <p class="text-sm text-zinc-600 mt-1">센서 캘리브레이션과 주행 알고리즘 검증</p>
+            <h3 class="font-medium">모델링 & 제작</h3>
+            <p class="text-sm text-zinc-600 mt-1">프레임/CAD/FEA부터 용접·조립·검수까지, 실제 차량으로 구현.</p>
           </div>
         </div>
+
+        <!-- 3) 전자 장비 -->
         <div class="card rounded-2xl bg-white overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1544829728-e5cb04f405a9?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <picture>
+            <source srcset="assets/electronics_1200.webp" type="image/webp">
+            <source srcset="assets/electronics_800.jpg 800w, assets/electronics_1200.jpg 1200w, assets/electronics_1600.jpg 1600w" type="image/jpeg">
+            <img src="assets/electronics_1200.jpg" alt="전자 장비 & 테스트벤치" class="aspect-video w-full object-cover" />
+          </picture>
+          <div class="p-6">
+            <h3 class="font-medium">전자 장비</h3>
+            <p class="text-sm text-zinc-600 mt-1">센서·전원·배선·DAQ, HIL 테스트 및 PCB 프로토타이핑.</p>
+          </div>
+        </div>
+
+        <!-- 4) 대회 참가 -->
+        <div class="card rounded-2xl bg-white overflow-hidden">
+          <picture>
+            <source srcset="assets/competition_1200.webp" type="image/webp">
+            <source srcset="assets/competition_800.jpg 800w, assets/competition_1200.jpg 1200w, assets/competition_1600.jpg 1600w" type="image/jpeg">
+            <img src="assets/competition_1200.jpg" alt="대회 참가 – 주행 테스트" class="aspect-video w-full object-cover" />
+          </picture>
           <div class="p-6">
             <h3 class="font-medium">대회 참가</h3>
-            <p class="text-sm text-zinc-600 mt-1">학생 포뮬러/자율주행 챌린지 도전</p>
+            <p class="text-sm text-zinc-600 mt-1">자율주행 챌린지/학생 포뮬러 등 실제 트랙에서 성능 검증.</p>
           </div>
         </div>
       </div>
