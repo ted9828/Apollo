@@ -60,10 +60,10 @@
       <div>
         <img src="assets/logo.png" alt="TEAM APOLLO" class="h-24 w-24 md:h-28 md:w-28 rounded-full border mb-6 object-contain">
         <h1 class="text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
-          Full‑stack <span class="underline decoration-zinc-300">Autonomous</span> Racing Team
+          Full-stack <span class="underline decoration-zinc-300">Autonomous</span> Racing Team
         </h1>
         <p class="mt-5 text-lg text-zinc-600">
-          Electronics · Perception/Planning · Modeling · Fabrication — one team, end‑to‑end.
+          Electronics · Perception/Planning · Modeling · Fabrication — one team, end-to-end.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="#sponsor" class="px-5 py-3 rounded-full bg-brand text-white hover:opacity-90">Sponsor</a>
@@ -108,12 +108,19 @@
         <div class="card rounded-2xl bg-white p-6">
           <h3 class="font-medium">후원사 노출</h3>
           <p class="text-sm text-zinc-700 mt-2">메인/푸터/리포트에 로고/링크를 노출합니다.</p>
+
+          <!-- Logos: HKNU + APCLAB -->
           <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
-            <a href="#" class="rounded-xl border p-4 grid place-items-center bg-white">
-              <div class="text-center leading-tight"><div class="text-xs font-semibold">Hankyong Nat'l Univ.</div></div>
+            <!-- HKNU -->
+            <a href="https://www.hknu.ac.kr" target="_blank" rel="noopener"
+               class="rounded-xl border p-4 grid place-items-center bg-white">
+              <img src="assets/hknu_logo.png" alt="Hankyong National University"
+                   class="h-8 md:h-9 object-contain" />
             </a>
-            <a href="#" class="rounded-xl border p-4 grid place-items-center bg-white">
-              <div class="text-center leading-tight"><div class="text-xs font-semibold">APCLAB</div></div>
+            <!-- APCLAB -->
+            <a href="https://sites.google.com/view/apcl" target="_blank" rel="noopener"
+               class="rounded-xl border p-4 grid place-items-center bg-white">
+              <img src="assets/apcl_logo.png" alt="APCLAB" class="h-8 md:h-9 object-contain" />
             </a>
             <div class="rounded-xl border border-dashed p-4 grid place-items-center text-zinc-400 text-sm">Your Logo</div>
           </div>
@@ -159,7 +166,7 @@
         <div class="card rounded-2xl bg-white p-6 space-y-4">
           <div class="flex items-center gap-4">
             <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2023</div>
-            <p class="text-zinc-700">APOLLO 창립, 첫 자작차 플랫폼 설계</p>
+            <p class="text-zinc-700">APOLLO 창립, 첫 자작차 플랫폼 설계, 교내 대회 출전</p>
           </div>
           <picture>
             <source srcset="assets/since2023_1200.webp" type="image/webp">
@@ -168,11 +175,11 @@
         </div>
         <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
           <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2024</div>
-          <p class="text-zinc-700">자율주행 스택 베타, 대회 참가</p>
+          <p class="text-zinc-700">자작차 제작, 고도화된 자작차 플랫폼 설계, 자작차 대회 참가</p>
         </div>
         <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
           <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2025</div>
-          <p class="text-zinc-700">산학 협력 확대, APCLAB 후원 확정</p>
+          <p class="text-zinc-700">미래 지향적 모델링, 고도화된된 전자장비 </p>
         </div>
       </div>
     </div>
@@ -241,14 +248,24 @@
       <p class="text-zinc-600">후원·협업·가입 문의</p>
       <div class="mt-6 grid md:grid-cols-2 gap-8">
         <div class="card rounded-2xl bg-white p-6">
-          <div class="text-zinc-700">이메일: <a class="underline" href="mailto:dmlee1204@gmail.com">dmlee1204@gmail.com</a></div>
-          <div class="mt-2 text-zinc-700">Instagram: <a class="underline" href="https://www.instagram.com/hknu_apollo/" target="_blank">@hknu_apollo</a></div>
+          <div class="text-zinc-700">
+            Team leader email:
+            <a class="underline" href="mailto:junho16167@hknu.ac.kr">junho16167@hknu.ac.kr</a>
+          </div>
           <div class="mt-2 text-zinc-700">
-  Team leader: <span class="font-medium">Junho Jung (정준호)</span> ·
-  Phone: <a class="underline" href="tel:+821032217692">010-3221-7692</a>
-</div>
-
+            Team email:
+            <a class="underline" href="mailto:hknuapollo@gmail.com">hknuapollo@gmail.com</a>
+          </div>
+          <div class="mt-2 text-zinc-700">
+            Instagram:
+            <a class="underline" href="https://www.instagram.com/hknu_apollo/" target="_blank">@hknu_apollo</a>
+          </div>
+          <div class="mt-2 text-zinc-700">
+            Team leader: <span class="font-medium">Junho Jung (정준호)</span> ·
+            Phone: <a class="underline" href="tel:+821032217692">010-3221-7692</a>
+          </div>
         </div>
+
         <div class="card rounded-2xl bg-white p-6">
           <form onsubmit="event.preventDefault(); alert('데모 폼 — 실제 전송은 Google Form 또는 백엔드 연동이 필요합니다.');" class="grid gap-4">
             <input required placeholder="이름" class="w-full border rounded-xl px-4 py-3" />
@@ -269,8 +286,16 @@
       </div>
       <div class="flex items-center gap-2">
         <span class="text-zinc-500">Sponsor</span>
-        <span class="px-2 py-1 rounded-lg border bg-white">Hankyong Nat'l Univ.</span>
-        <span class="px-2 py-1 rounded-lg border bg-white">APCLAB</span>
+        <!-- HKNU clickable -->
+        <a href="https://www.hknu.ac.kr" target="_blank" rel="noopener"
+           class="px-2 py-1 rounded-lg border bg-white flex items-center gap-2">
+          <img src="assets/hknu_logo.png" alt="Hankyong National University" class="h-5 object-contain" />
+        </a>
+        <!-- APCLAB clickable -->
+        <a href="https://sites.google.com/view/apcl" target="_blank" rel="noopener"
+           class="px-2 py-1 rounded-lg border bg-white flex items-center gap-2">
+          <img src="assets/apcl_logo.png" alt="APCLAB" class="h-5 object-contain" />
+        </a>
       </div>
     </div>
   </footer>
