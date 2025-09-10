@@ -129,36 +129,53 @@
     </div>
   </section>
 
-  <section id="parts" class="py-16 hairline">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-2">파트 소개</h2>
-      <p class="text-zinc-600">전자 · 인지판단 · 모델링 · 제작</p>
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <div class="card rounded-2xl bg-white p-6">
-          <h3 class="font-medium">전자(Electronics)</h3>
-          <p class="text-sm text-zinc-700 mt-2">전장 설계, 배터리 매니지먼트, CAN/UART, 센서 인터페이스.</p>
-          <a href="https://github.com/ted9828/apollo-electronics"
-   target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
-        </div>
-        <div class="card rounded-2xl bg-white p-6">
-          <h3 class="font-medium">인지판단(Perception & Planning)</h3>
-          <p class="text-sm text-zinc-700 mt-2">카메라·라이다 인식, 센서퓨전, 경로계획, 제어.</p>
-          <a href="https://github.com/ted9828/apollo-perception"
-   target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
-        </div>
-        <div class="card rounded-2xl bg-white p-6">
-          <h3 class="font-medium">모델링(Modeling)</h3>
-          <p class="text-sm text-zinc-700 mt-2">CAD/FEA, 프레임·서스펜션·강성해석, 경량화.</p>
-          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
-        </div>
-        <div class="card rounded-2xl bg-white p-6">
-          <h3 class="font-medium">제작(Fabrication)</h3>
-          <p class="text-sm text-zinc-700 mt-2">용접·CNC·3D프린팅, 조립 및 안전 테스트, 트랙 검증.</p>
-          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+<section id="parts" class="py-16 hairline">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-2">파트 소개</h2>
+    <p class="text-zinc-600">전자 · 인지판단 · 모델링 · 제작</p>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+
+      <!-- Electronics -->
+      <div class="card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">전자(Electronics)</h3>
+        <p class="text-sm text-zinc-700 mt-2">전장 설계, 배터리 매니지먼트, CAN/UART, 센서 인터페이스.</p>
+        <a href="https://github.com/ted9828/apollo-electronics" target="_blank"
+           class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+      </div>
+
+      <!-- Perception & Planning (같은 리포 안 두 패키지) -->
+      <div class="card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">인지판단(Perception & Planning)</h3>
+        <p class="text-sm text-zinc-700 mt-2">카메라·라이다 인식, 센서퓨전, 경로계획, 제어.</p>
+        <div class="mt-3 space-x-3">
+          <a href="https://github.com/ted9828/apollo-perception" target="_blank"
+             class="inline-block text-sm underline">Perception 리포</a>
+          <a href="https://github.com/ted9828/apollo-perception/tree/main/apollo_planning" target="_blank"
+             class="inline-block text-sm underline">Planning 리포</a>
         </div>
       </div>
+
+      <!-- Modeling -->
+      <div class="card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">모델링(Modeling)</h3>
+        <p class="text-sm text-zinc-700 mt-2">CAD/FEA, 프레임·서스펜션·강성해석, 경량화.</p>
+        <a href="https://github.com/ted9828/apollo-modeling" target="_blank"
+           class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+      </div>
+
+      <!-- Fabrication -->
+      <div class="card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">제작(Fabrication)</h3>
+        <p class="text-sm text-zinc-700 mt-2">용접·CNC·3D프린팅, 조립 및 안전 테스트, 트랙 검증.</p>
+        <a href="https://github.com/ted9828/apollo-fabrication" target="_blank"
+           class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section id="since" class="py-16 hairline">
     <div class="max-w-7xl mx-auto px-4">
