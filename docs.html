@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APOLLO Docs · Autonomous Racing Team</title>
+  <meta name="description" content="APOLLO — Team documentation inside the APOLLO site" />
+  <link rel="icon" href="assets/logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { brand: '#0C1E2F', accent: '#D5A559' } } }
+    };
+  </script>
+  <style>
+    .card { border: 1px solid rgba(0,0,0,.06); box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+    .hairline { border-top: 1px solid rgba(0,0,0,.06); }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="text-zinc-900 bg-white">
+
+  <!-- Header (메인과 동일 스타일) -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur">
+    <div class="hairline"></div>
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html#home" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="APOLLO" class="h-10 w-10 rounded-full border" />
+        <div class="leading-tight">
+          <div class="font-bold tracking-tight">APOLLO</div>
+          <div class="text-xs text-zinc-500">Autonomous Racing Team · Since 2023</div>
+        </div>
+      </a>
+
+      <!-- 데스크톱 네비 -->
+      <nav id="navLinks" class="hidden md:flex items-center gap-6 text-sm">
+        <a href="index.html#sponsor" class="hover:text-zinc-600">Sponsor</a>
+        <a href="index.html#parts" class="hover:text-zinc-600">Parts</a>
+        <a href="index.html#since" class="hover:text-zinc-600">SINCE</a>
+        <a href="index.html#activities" class="hover:text-zinc-600">Activities</a>
+        <a href="index.html#contact" class="hover:text-zinc-600">Contact</a>
+        <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">GitHub</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-1.5 rounded-full bg-accent text-white hover:opacity-90">Instagram</a>
+        <span class="px-3 py-1.5 rounded-full border bg-zinc-900 text-white">Docs</span>
+      </nav>
+
+      <!-- 모바일 버튼 -->
+      <button id="navBtn" class="md:hidden p-2" aria-label="menu">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- 모바일 드로어 -->
+    <div id="navDrawer" class="hidden md:hidden hairline">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="index.html#sponsor" onclick="toggleNav()">Sponsor</a>
+        <a href="index.html#parts" onclick="toggleNav()">Parts</a>
+        <a href="index.html#since" onclick="toggleNav()">SINCE</a>
+        <a href="index.html#activities" onclick="toggleNav()">Activities</a>
+        <a href="index.html#contact" onclick="toggleNav()">Contact</a>
+        <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-2 rounded-xl border w-max" onclick="toggleNav()">GitHub</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-2 rounded-xl bg-accent text-white w-max" onclick="toggleNav()">Instagram</a>
+        <span class="px-3 py-2 rounded-xl border w-max bg-zinc-900 text-white">Docs</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero (메인과 유사한 라디얼 그라데이션, 2열 레이아웃) -->
+  <section class="relative">
+    <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_10%_-10%,#e5e7eb,transparent)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
+          APOLLO <span class="underline decoration-zinc-300">Docs</span>
+        </h1>
+        <p class="mt-5 text-lg text-zinc-600">
+          팀 문서 포털 — Electronics · Perception/Planning · Modeling (CATIA) · Fabrication.
+          메인 사이트와 동일한 톤앤매너로 구성했습니다.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#electronics" class="px-5 py-3 rounded-full border hover:bg-zinc-50">Electronics</a>
+          <a href="#perception" class="px-5 py-3 rounded-full border hover:bg-zinc-50">Perception</a>
+          <a href="#planning" class="px-5 py-3 rounded-full border hover:bg-zinc-50">Planning</a>
+          <a href="#modeling" class="px-5 py-3 rounded-full border hover:bg-zinc-50">Modeling</a>
+          <a href="#fabrication" class="px-5 py-3 rounded-full bg-brand text-white hover:opacity-90">Fabrication</a>
+        </div>
+      </div>
+      <div class="card rounded-3xl bg-white p-6">
+        <div class="grid grid-cols-3 gap-3 text-sm">
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">ROS</span>
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">Sensor Fusion</span>
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">MPC/PID</span>
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">CATIA</span>
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">FEA</span>
+          <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">HIL/DAQ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 섹션들 (메인 카드 스타일 매칭) -->
+  <section id="electronics" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Electronics</h2>
+      <p class="text-zinc-600">배선 표준 · 전원/퓨즈 규격 · MCU/펌웨어(PlatformIO) · 테스트벤치(HIL/DAQ)</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">하네스 & 전장 규격</h3>
+          <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li>커넥터/단자 규격, 색상 규칙, 레이블링</li>
+            <li>퓨즈/릴레이, 접지, 차체 배선 라우팅</li>
+          </ul>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">펌웨어 & 테스트</h3>
+          <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li>PlatformIO 빌드 체인, 보드 디파인</li>
+            <li>DAQ/HIL 테스트, 시리얼/캔 로깅</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="perception" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Perception</h2>
+      <p class="text-zinc-600">카메라/라이다 인식 · 센서퓨전 · 좌표계/TF 관리</p>
+      <div class="mt-6 card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">ROS 인터페이스</h3>
+        <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+          <li>토픽: <code class="bg-zinc-100 px-1.5 py-0.5 rounded">/camera/image_raw</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">/points_raw</code></li>
+          <li>프레임: <code class="bg-zinc-100 px-1.5 py-0.5 rounded">map → odom → base_link</code></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="planning" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Planning</h2>
+      <p class="text-zinc-600">경로계획 · 제어(MPC/PID) · 검증</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">노드</h3>
+          <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">planner_node</code> — global/local</li>
+            <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">controller_node</code> — MPC/PID</li>
+          </ul>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">지도 & 제약</h3>
+          <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li>트랙/맵 표현, 경계/장애물 모델</li>
+            <li>속도/가속 제약, 스무딩 파라미터</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modeling" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Modeling (CATIA)</h2>
+      <p class="text-zinc-600">CATIA 기반 파트/어셈블리/도면 · 경량화/강성 · FEA</p>
+      <div class="mt-6 card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">폴더 정책</h3>
+        <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+          <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">CAD/Parts</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">CAD/Assemblies</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">exports/</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">FEA/</code></li>
+          <li>네이티브(CATPart/CATProduct/CATDrawing)는 Git LFS 권장</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fabrication" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Fabrication</h2>
+      <p class="text-zinc-600">용접/CNC/3D프린팅 · 조립/검수 · 트랙 테스트</p>
+      <div class="mt-6 card rounded-2xl bg-white p-6">
+        <h3 class="font-medium">공정 기록</h3>
+        <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+          <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">process/YYYY-MM-DD_part_operation</code> 로그</li>
+          <li>제조용 도면은 PDF/DXF 릴리스, 변경 이력 태깅</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor (텍스트/링크 – 로고 이미지 있으면 img로 교체 가능) -->
+  <section class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Sponsor & Partners</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <a href="https://www.hknu.ac.kr" target="_blank" class="card rounded-2xl bg-white p-6 hover:bg-zinc-50 flex items-center gap-4">
+          <!-- 로고 파일이 있으면 아래 주석 해제 후 src 변경
+          <img src="assets/hknu_logo.png" class="h-10 w-auto" alt="Hankyong Nat'l Univ.">
+          -->
+          <div>
+            <div class="font-medium">Hankyong National Univ.</div>
+            <div class="text-sm text-zinc-600">한경국립대학교</div>
+          </div>
+        </a>
+        <a href="https://sites.google.com/view/apcl" target="_blank" class="card rounded-2xl bg-white p-6 hover:bg-zinc-50 flex items-center gap-4">
+          <!-- 로고 파일이 있으면 아래 주석 해제 후 src 변경
+          <img src="assets/apclab_logo.png" class="h-10 w-auto" alt="APCLAB">
+          -->
+          <div>
+            <div class="font-medium">APCLAB</div>
+            <div class="text-sm text-zinc-600">APCLAB 연구실</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="hairline">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-xs text-zinc-600 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="APOLLO" class="h-6 w-6 rounded-full border" />
+        <span>© 2025 APOLLO · Autonomous Racing Team · Since 2023</span>
+      </div>
+      <a href="index.html" class="px-3 py-1.5 rounded-lg border bg-white">← Back to Home</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navDrawer').classList.toggle('hidden');
+    }
+    document.getElementById('navBtn').addEventListener('click', toggleNav);
+  </script>
+</body>
+</html>
