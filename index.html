@@ -36,12 +36,14 @@
         <a href="#contact" class="hover:text-zinc-600">Contact</a>
         <a href="https://github.com/ted9828" target="_blank" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">GitHub</a>
         <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-1.5 rounded-full bg-accent text-white hover:opacity-90">Instagram</a>
-        <a href="docs.html" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Docs</a>
+        <button id="docsOpenBtn" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Docs</button>
 
       </nav>
       <button id="navBtn" class="md:hidden p-2" aria-label="menu">
         <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       </button>
+
+      
     </div>
     <div id="navDrawer" class="hidden md:hidden hairline">
       <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
@@ -52,7 +54,7 @@
         <a href="#contact" onclick="toggleNav()">Contact</a>
         <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-2 rounded-xl border w-max">GitHub</a>
         <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-2 rounded-xl bg-accent text-white w-max">Instagram</a>
-        <a href="docs.html" onclick="toggleNav()" class="px-3 py-2 rounded-xl border w-max">Docs</a>
+       <button id="docsOpenBtnMobile" class="px-3 py-2 rounded-xl border w-max">Docs</button>
 
       </div>
     </div>
@@ -333,5 +335,171 @@
     }
     document.getElementById('navBtn').addEventListener('click', toggleNav);
   </script>
+
+  <!-- ===================== Docs Modal ===================== -->
+<div id="docsModal" class="fixed inset-0 z-[70] hidden" aria-hidden="true">
+  <!-- 배경 -->
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+  <!-- 창 -->
+  <div class="relative max-w-6xl mx-auto mt-6 md:mt-10 h-[90vh] md:h-[85vh] bg-white rounded-3xl card overflow-hidden flex flex-col">
+    <!-- 상단 바 -->
+    <div class="flex items-center justify-between px-5 md:px-6 py-4 border-b">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" class="h-8 w-8 rounded-full border" alt="APOLLO">
+        <div class="leading-tight">
+          <div class="font-semibold">APOLLO Docs</div>
+          <div class="text-xs text-zinc-500">팀 문서 포털 · Electronics · Perception/Planning · Modeling (CATIA) · Fabrication</div>
+        </div>
+      </div>
+      <button id="docsCloseBtn" class="p-2 rounded-lg hover:bg-zinc-100" aria-label="close">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- 탭(빠른 이동) -->
+    <div class="px-5 md:px-6 py-3 border-b bg-white/70 backdrop-blur sticky top-0 z-10">
+      <div class="flex flex-wrap gap-2 text-sm">
+        <a href="#d-elec" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Electronics</a>
+        <a href="#d-perc" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Perception</a>
+        <a href="#d-plan" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Planning</a>
+        <a href="#d-model" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Modeling (CATIA)</a>
+        <a href="#d-fab" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">Fabrication</a>
+      </div>
+    </div>
+
+    <!-- 내용 -->
+    <div class="px-5 md:px-6 py-6 overflow-y-auto grow space-y-8 bg-[radial-gradient(1200px_600px_at_10%_-10%,#f4f4f5,transparent)]">
+      <!-- Electronics -->
+      <section id="d-elec" class="space-y-4">
+        <h3 class="text-xl font-semibold">Electronics</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white p-5 card">
+            <div class="font-medium">하네스 & 전장 규격</div>
+            <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+              <li>커넥터/단자 규격, 레이블링/색상 규칙</li>
+              <li>퓨즈/릴레이, 접지, 차체 라우팅</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white p-5 card">
+            <div class="font-medium">펌웨어 & 테스트</div>
+            <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+              <li>PlatformIO 빌드 체인 · 보드 디파인</li>
+              <li>DAQ/HIL 테스트 · 시리얼/캔 로깅</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Perception -->
+      <section id="d-perc" class="space-y-4">
+        <h3 class="text-xl font-semibold">Perception</h3>
+        <div class="rounded-2xl bg-white p-5 card">
+          <div class="font-medium">ROS I/F & 프레임</div>
+          <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li>토픽: <code class="bg-zinc-100 px-1.5 py-0.5 rounded">/camera/image_raw</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">/points_raw</code></li>
+            <li>프레임: <code class="bg-zinc-100 px-1.5 py-0.5 rounded">map → odom → base_link</code></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Planning -->
+      <section id="d-plan" class="space-y-4">
+        <h3 class="text-xl font-semibold">Planning</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white p-5 card">
+            <div class="font-medium">노드</div>
+            <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+              <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">planner_node</code> — global/local</li>
+              <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">controller_node</code> — MPC/PID</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-white p-5 card">
+            <div class="font-medium">지도 & 제약</div>
+            <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+              <li>트랙/맵 표현 · 경계/장애물 모델링</li>
+              <li>속도/가속 제약 · 스무딩 파라미터</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modeling (CATIA) -->
+      <section id="d-model" class="space-y-4">
+        <h3 class="text-xl font-semibold">Modeling (CATIA)</h3>
+        <div class="rounded-2xl bg-white p-5 card">
+          <div class="font-medium">폴더 정책</div>
+          <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">CAD/Parts</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">CAD/Assemblies</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">exports/</code>, <code class="bg-zinc-100 px-1.5 py-0.5 rounded">FEA/</code></li>
+            <li>CATIA 네이티브(CATPart/CATProduct/CATDrawing)는 Git LFS 권장</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Fabrication -->
+      <section id="d-fab" class="space-y-4">
+        <h3 class="text-xl font-semibold">Fabrication</h3>
+        <div class="rounded-2xl bg-white p-5 card">
+          <div class="font-medium">공정 기록/릴리스</div>
+          <ul class="mt-2 text-sm text-zinc-700 list-disc pl-5 space-y-1">
+            <li><code class="bg-zinc-100 px-1.5 py-0.5 rounded">process/YYYY-MM-DD_part_operation</code> 로그</li>
+            <li>제조용 도면은 PDF/DXF 릴리스 · 변경 이력 태깅</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 스폰서 -->
+      <section class="space-y-4">
+        <h3 class="text-xl font-semibold">Sponsor & Partners</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="https://www.hknu.ac.kr" target="_blank" class="rounded-2xl bg-white p-5 card hover:bg-zinc-50">
+            <div class="font-medium">Hankyong National Univ.</div>
+            <div class="text-sm text-zinc-600">한경국립대학교</div>
+          </a>
+          <a href="https://sites.google.com/view/apcl" target="_blank" class="rounded-2xl bg-white p-5 card hover:bg-zinc-50">
+            <div class="font-medium">APCLAB</div>
+            <div class="text-sm text-zinc-600">APCLAB 연구실</div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 모달 열기/닫기
+  const docsModal = document.getElementById('docsModal');
+  const body = document.body;
+  const openBtn = document.getElementById('docsOpenBtn');
+  const openBtnMobile = document.getElementById('docsOpenBtnMobile');
+  const closeBtn = document.getElementById('docsCloseBtn');
+
+  function openDocs() {
+    docsModal.classList.remove('hidden');
+    body.style.overflow = 'hidden'; // 배경 스크롤 방지
+  }
+  function closeDocs() {
+    docsModal.classList.add('hidden');
+    body.style.overflow = '';
+  }
+  openBtn?.addEventListener('click', openDocs);
+  openBtnMobile?.addEventListener('click', () => { 
+    // 모바일 드로어 닫고 열기
+    if (typeof toggleNav === 'function') toggleNav();
+    openDocs();
+  });
+  closeBtn.addEventListener('click', closeDocs);
+  docsModal.addEventListener('click', (e) => {
+    if (e.target === docsModal) closeDocs(); // 배경 클릭 닫기
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !docsModal.classList.contains('hidden')) closeDocs();
+  });
+
+  // 직접 URL로 #docs 들어오면 자동 오픈
+  if (location.hash === '#docs') openDocs();
+</script>
+<!-- =================== /Docs Modal =================== -->
+
 </body>
 </html>
